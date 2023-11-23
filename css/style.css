@@ -128,14 +128,9 @@ input:checked + .slider::before {
 
 .nav-list {
     list-style: none;
-    width: 9rem;
-    border-radius: 10px;
-    border: 1px solid var(--main);
-    background-color: #000;
     position: absolute;
     right: -100%;
     top: 4.5rem;
-    display: block;
     transition: all 0.5s ease-in-out;
 }
 
@@ -152,15 +147,17 @@ input:checked + .slider::before {
     position: absolute;
     top: 4.5rem;
     right: 0.5rem;
+    display: block;
+    width: 9rem;
+    border-radius: 10px;
+    border: 1px solid var(--main);
+    background-color: #000;
     transition: all 0.5s ease-in-out;
 }
 
-.nav-list li a.active {
+.nav-list.show li a.active {
     color: var(--text-third);
     background-color: var(--main);
-}
-
-.nav-list li a.active {
     display: inline-block;
     width: 100%;
     margin: 0;
@@ -207,6 +204,7 @@ input:checked + .slider::before {
 
 /* Home */
 .home {
+    height: 120vh;
     padding-top: 10rem;
     background: url('../img/background/2-small.jpg') center/cover no-repeat;
 }
@@ -521,6 +519,10 @@ footer {
     }
 
     .nav-list {
+        position: relative;
+        right: 0;
+        top: 0;
+        left: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -533,8 +535,9 @@ footer {
     }
 
     .nav-list li a.active {
+        background-color: var(--main);
         border-radius: 10px;
-        padding: 0.8rem;
+        padding: 0.5rem;
         color: var(--text-third);
     }
 
