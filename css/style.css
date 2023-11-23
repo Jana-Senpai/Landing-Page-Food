@@ -44,7 +44,8 @@ body {
 
 /* DarkMode Toggle */
 .toggle-container {
-    display: flex;
+    /* display: flex; */
+    display: none;
     align-items: center;
     margin: 20px;
 }
@@ -127,7 +128,15 @@ input:checked + .slider::before {
 
 .nav-list {
     list-style: none;
-    display: none;
+    width: 9rem;
+    border-radius: 10px;
+    border: 1px solid var(--main);
+    background-color: #000;
+    position: absolute;
+    right: -100%;
+    top: 4.5rem;
+    display: block;
+    transition: all 0.5s ease-in-out;
 }
 
 .nav-list a {
@@ -142,33 +151,26 @@ input:checked + .slider::before {
 .nav-list.show {
     position: absolute;
     top: 4.5rem;
-    right: 0.2rem;
-    /* padding: 0.5rem; */
-    display: block;
-    width: 12rem;
-    border-radius: 10px;
-    border: 1px solid var(--main);
-    background-color: #000;
+    right: 0.5rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .nav-list li a.active {
+    color: var(--text-third);
     background-color: var(--main);
-    padding: 0.5rem;
-    /* border-radius: 5px; */
 }
 
-.nav-list.show li a.active {
+.nav-list li a.active {
     display: inline-block;
     width: 100%;
     margin: 0;
-    color: var(--text-third);
     border-radius: 10px;
 }
 
-.nav-list.show li {
-    font-size: 2rem;
+.nav-list li {
+    font-size: 1.4rem;
     text-align: center;
-    line-height: 4rem;
+    line-height: 3.5rem;
 }
 
 .menu-toggle {
@@ -205,7 +207,6 @@ input:checked + .slider::before {
 
 /* Home */
 .home {
-    /* height: 100vh; */
     padding-top: 10rem;
     background: url('../img/background/2-small.jpg') center/cover no-repeat;
 }
@@ -221,9 +222,10 @@ input:checked + .slider::before {
 }
 
 .home-content p {
+    font-family: 'Quicksand', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    font-family: 'Quicksand', sans-serif;
+    /* color: var(--text-main); */
 }
 
 .home-img {
@@ -246,7 +248,7 @@ input:checked + .slider::before {
     padding: 0.5rem;
     border-radius: 5px;
     color: var(--text-third);
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .btn-group a:hover {
@@ -321,29 +323,41 @@ input:checked + .slider::before {
 }
 
 .card {
-    margin: 1.5rem auto;
-    width: 20rem;
-    max-width: 20rem;
+    margin: 2rem auto;
+    width: 18rem;
+    max-width: 18rem;
     border-radius: 10px;
     padding-bottom: 1rem;
-    background-color: var(--second);
-    box-shadow: 0 0 5px black;
+    background-color: var(--moon);
+    overflow: hidden;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card-img {
     width: 100%;
     height: 100%;
-    max-height: 10rem;
+    max-height: 10.5rem;
+    max-width: 18rem;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.1);
 }
 
 .card-title {
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
-    /* color: var(--text-third); */
-    line-height: 2rem;
+    font-size: 1.4rem;
+    color: var(--text-third);
+    line-height: 2.5rem;
     padding: 0.5rem;
 }
 
@@ -357,11 +371,12 @@ input:checked + .slider::before {
 }
 
 .card-price {
-    background-color: var(--moon);
+    background-color: var(--main);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     border-radius: 10px;
     padding: 1rem;
+    cursor: default;
     width: max-content;
     color: var(--text-third);
     font-weight: bold;
@@ -436,6 +451,7 @@ input:checked + .slider::before {
 
 .contact-content {
     padding-left: 1rem;
+    letter-spacing: 1px;
 }
 
 .contact-content h3 {
@@ -448,13 +464,13 @@ input:checked + .slider::before {
 
 .contact-content h4 {
     font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1rem;
     color: var(--text-third);
 }
 
 .contact-map .map {
-    width: 20rem;    
+    /* width: 18rem;     */
     height: 20rem;
 }
 /* End Contact */
@@ -466,7 +482,7 @@ footer {
     width: 100%;
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 400;
 }
 
