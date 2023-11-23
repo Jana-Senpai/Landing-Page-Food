@@ -10,7 +10,7 @@
 :root {
     --main: #FF6C22;
     --second: #ED7D31;
-    --bg-main: #FFF6F6;
+    --bg-main: #fff5f5;
     --text-main: #4F4A45;
     --text-second: #6C5F5B;
     --text-third: #FFF;
@@ -113,18 +113,17 @@ input:checked + .slider::before {
     width: 100%;
     font-family: 'Poppins', sans-serif;
     background-color:  transparent;
-    padding: .5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: .5rem 1rem;
     z-index: 100;
     transition: background-color 0.5s ease-in-out;
 }
 
 .navbar.scrolled {
-    background-color: rgba(51, 51, 51, 0.8);
+    background-color: rgba(255, 245, 245, 0.8);
 }
-
 
 .nav-list {
     list-style: none;
@@ -133,7 +132,7 @@ input:checked + .slider::before {
 
 .nav-list a {
     text-decoration: none;
-    color: var(--text-third);
+    color: var(--text-main);
 }
 
 .nav-logo img {
@@ -144,7 +143,7 @@ input:checked + .slider::before {
     position: absolute;
     top: 4.5rem;
     right: 0.2rem;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     display: block;
     width: 12rem;
     border-radius: 10px;
@@ -155,19 +154,21 @@ input:checked + .slider::before {
 .nav-list li a.active {
     background-color: var(--main);
     padding: 0.5rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+}
+
+.nav-list.show li a.active {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    color: var(--text-third);
+    border-radius: 10px;
 }
 
 .nav-list.show li {
     font-size: 2rem;
     text-align: center;
-    margin: 1rem 0;
-    border-bottom: 1px solid salmon;
-}
-
-.nav-list.show a {
-    text-decoration: none;
-    color: var(--text-main);
+    line-height: 4rem;
 }
 
 .menu-toggle {
@@ -204,8 +205,8 @@ input:checked + .slider::before {
 
 /* Home */
 .home {
-    height: 100vh;
-    padding-top: 8rem;
+    /* height: 100vh; */
+    padding-top: 10rem;
     background: url('../img/background/2-small.jpg') center/cover no-repeat;
 }
 
@@ -228,7 +229,8 @@ input:checked + .slider::before {
 .home-img {
     display: block;
     margin: 0 auto;
-    width: 250px;
+    width: 18.75rem;
+    padding-bottom: 5rem;
 }
 
 .btn-group {
@@ -244,45 +246,21 @@ input:checked + .slider::before {
     padding: 0.5rem;
     border-radius: 5px;
     color: var(--text-third);
+    box-shadow: 0 0 5px black;
 }
 
 .btn-group a:hover {
     background-color: var(--second);
+    box-shadow: none;
 }
 /* End Home */
-
-
-/* About */
-.about {
-    height: 100vh;
-    padding-top: 8rem;
-}
-
-.about-img {
-    display: block;
-    margin: 0 auto;
-    width: 300px;
-}
-
-.about-content h1 {
-    margin-top: 1.2rem;
-    font-size: 1.6rem;
-}
-
-.about-content p {
-    font-size: 1rem;
-}
-
-.about-content a {
-    text-decoration: none;
-}
-/* End About */
 
 
 
 /* Menu */
 .menu {
-    padding-top: 8rem;
+    padding-top: 5rem;
+    background-color: var(--bg-main);
 }
 
 .button-container {
@@ -295,15 +273,25 @@ input:checked + .slider::before {
     background-color: #000;
     color: white;
     border: 0;
-    margin: 0 1rem;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
     cursor: pointer;
+    width: 5rem;
+    padding: 0.5rem;
+}
+
+.button-container button:nth-child(1){
+    border-radius: 5px 0 0 5px;
+}
+
+.button-container button:nth-child(2){
+    border-radius: 0 5px 5px 0;
 }
 
 .button-container button:hover {
-    background-color: var(--second);
+    background-color: rgba(61, 61, 61, 0.5);
+    color: black;
 }
 
 .button-container button.active {
@@ -316,23 +304,30 @@ input:checked + .slider::before {
 
 .menu-title {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 
 #loading {
     display: none;
-    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     font-size: 1.6rem;
     text-align: center;
+    margin-top: 2rem;
 }
 
 .card {
-    margin: 1rem auto;
-    border: 1px solid var(--second);
-    width: 18rem;
-    max-width: 18rem;
+    margin: 1.5rem auto;
+    width: 20rem;
+    max-width: 20rem;
     border-radius: 10px;
-    background-color: var(--third);
+    padding-bottom: 1rem;
+    background-color: var(--second);
+    box-shadow: 0 0 5px black;
 }
 
 .card-img {
@@ -344,27 +339,33 @@ input:checked + .slider::before {
 }
 
 .card-title {
-    font-weight: bold;
-    line-height: 1.6rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    /* color: var(--text-third); */
+    line-height: 2rem;
     padding: 0.5rem;
 }
 
 .card-subtitle {
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--text-third);
     line-height: 1.2rem;
-    padding: 10px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
     padding: 0 0.5rem;
 }
 
 .card-price {
-    background-color: var(--fourth);
+    background-color: var(--moon);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     border-radius: 10px;
-    padding: 0.5rem;
+    padding: 1rem;
     width: max-content;
-    color: black;
+    color: var(--text-third);
     font-weight: bold;
-    padding: 0.5rem;
-    margin: .5rem;
+    margin: 0.8rem;
 }
 /* End Menu */
 
@@ -374,12 +375,13 @@ input:checked + .slider::before {
 
 .contact {
     margin: 1rem 0;
-    padding-top: 8rem;
+    padding-top: 5rem;
+    background-color: var(--bg-main);
 }
 
 .contact-box {
     width: 100%; 
-    background-color: var(--second);
+    background-color: var(--moon);
     border-radius: 10px;
     padding: 1rem;
 }
@@ -393,16 +395,20 @@ input:checked + .slider::before {
 }
 
 .contact-title {
-    font-weight: bold;
-    font-size: 1.4rem;
     text-align: center;
 }
 
-.contact-icon {
-    font-size: 1.9rem;
-    background-color: var(--fourth);
-    border-radius: 50%;
-    padding: 0.3rem 0.9rem;
+.contact-title h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.contact-title p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.2rem 0;
 }
 
 .contact-item {
@@ -411,17 +417,57 @@ input:checked + .slider::before {
     margin: 2rem 0;
 }
 
+.contact-icon {
+    font-size: 1.9rem;
+    /* background-color: var(--text-third); */
+    background-color: black;
+    border-radius: 50%;
+    padding: 1rem 1.2rem;
+}
+
+.contact-icon i {
+    color: var(--text-third);
+}
+
+.contact-item:nth-child(3) .contact-icon {
+    padding: 1rem 1.4rem;
+}
+
+
 .contact-content {
-    color: white;
-    padding-left: 2rem;
-}/* End Contact */
+    padding-left: 1rem;
+}
+
+.contact-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: var(--text-third);
+}
+
+.contact-content h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--text-third);
+}
+
+.contact-map .map {
+    width: 20rem;    
+    height: 20rem;
+}
+/* End Contact */
 
 
 /* Footer */
 footer {
-    background-color: var(--fourth);
+    background-color: #000;
     width: 100%;
-    padding: 2rem 0;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .footer-group {
@@ -433,6 +479,7 @@ footer {
     text-align: center;
     color: white;
 }
+
 /* End Footer */
 
 
@@ -443,7 +490,6 @@ footer {
 @media (min-width: 768px) {
     .row {
         display: flex;
-        align-items: center;
     }
 
     .col-6 {
@@ -470,14 +516,28 @@ footer {
         margin: 0 1rem;
     }
 
+    .nav-list li a.active {
+        border-radius: 10px;
+        padding: 0.8rem;
+        color: var(--text-third);
+    }
+
 
     .menu-toggle {
         display: none;
     }
 
     /* Home */
+    .home {
+        height: 100vh;
+    }
+
     .home-content {
-        padding-left: 3rem;
+        margin-left: 5rem;
+    }
+
+    .home-img {
+        width: 26rem;
     }
 
     .home-content h1 {
@@ -502,6 +562,11 @@ footer {
     .menu-container {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    /* Contact */
+    .contact-map .map {
+        width: 81rem;
     }
 }
 
