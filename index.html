@@ -13,47 +13,48 @@
 <body>
     <!-- Start Navbar -->
     <nav class="navbar">
-        <div class="navbar-left">
-            <img src="./img/Logo.png" width="40" alt="OMA RISOL">
+        <div class="nav-logo">
+            <img src="./img/Logo.png" alt="OMA RISOL">
         </div> <!-- Tambahkan Icon Navbar didalamnya -->
-        <div class="navbar-center">
-            <div class="navbar-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars bar-menu" id="menu-icon"></i>
-            </div>
-            <ul class="navbar-item">
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Menu">Menu</a></li>
-                <li><a href="#Contact">Contact</a></li> 
-                <li>
-                    <label class="switch">
-                        <input type="checkbox" id="dark-mode-toggle" />
-                        <span class="slider round"> </span>
-                    </label>
-                </li>
-            </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
+        <ul class="nav-list">
+            <li><a href="#Home" class="active">Home</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#Contact">Contact</a></li> 
+            <div class="toggle-container">
+                <i class="fa-solid fa-sun sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle" />
+                    <span class="slider round"></span>
+                </label>
+                <i class="fa-solid fa-moon moon"></i>
+            </div>
+        </ul>
     </nav>
     <!-- End Navbar -->
 
 
 
     <!-- Start Hero Section -->
-    <section class="home" id="Home">
+    <section class="home" id="Home"> 
         <div class="container">
             <div class="row">
                 <div class="col-6">
                     <div class="home-content">
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, quia?</p>
+                        <h1>OMA RISOL</h1>
+                        <p>Risol sehat, tanpa pengawet dan penyedap rasa</p>
+                        <p>Tipis kulitnya melimpah isinya</p>
                         <div class="btn-group">
-                            <button class="btn-item">Go Menu</button>
-                            <div class="arrow">&#8594;</div>
+                            <a href="#Menu" >Our Menu <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-6"> 
-                    <img src="./img/Ilustration-Risoles.jpg" width="200" alt="Risoles Ilustration">
+                    <img class="home-img" src="./img/Risol-2.png" alt="Risoles Ilustration">
                 </div>
             </div>
         <!-- </div> -->
@@ -61,31 +62,36 @@
     <!-- End Hero Section -->
 
     <!-- Start About Section -->
-    <section class="about" id="About">
+    <!-- <section class="about" id="About">
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <img src="./img/Ilustration-Risoles.jpg" width="300" alt="Risoles Ilustration">
+                    <img class="about-img" src="./img/Ilustration-Risoles.jpg" alt="Risoles Ilustration">
                 </div>
                 <div class="col-6">
                     <div class="about-content">
                         <h1>Lorem ipsum dolor sit amet.</h1>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, quia?</p>
                         <div class="btn-group">
-                            <button class="btn-item">Go Menu</button>
-                            <div class="arrow">&#8594;</div>
+                            <a href="#About">Go Menu <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End About Section -->
 
     <!-- Start Menu Section -->
     <section class="menu" id="Menu">
         <div class="container">
-            <div class="menu-container"></div> <!-- Menu akan saya looping di javascript dan dimasukkan ke dalam sini -->
+            <h1 class="menu-title">Our Menu</h1>
+            <div class="button-container">
+                <button id="btn-risol" onclick="showMenu('risol')">Risol</button>
+                <button id="btn-sus" onclick="showMenu('sus')">Kue Sus</button>
+            </div>
+            <div id="loading">Loading ...</div>
+            <div class="menu-container" id="menu-container"></div> <!-- Menu akan saya looping di javascript dan dimasukkan ke dalam sini -->
         </div>
     </section>
     <!-- End Menu Section -->
@@ -93,13 +99,62 @@
     <!-- Start Contact Section -->
     <section class="contact" id="Contact">
         <div class="container">
+            <div class="contact-img">
+                <img src="./img/Logo.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="contact-title">
+                <h1>Contact Us</h1>
+                <p>Risol dengan resep jadul tapi rasa kekinian</p>
+                <p>Cust Service : 082155612039</p>
+            </div>
             <div class="contact-box">
                 <!-- Jika ingin tambah contact, copas code dibawah ini -->
                 <div class="contact-item">
-                    <div class="contact-icon"></div>
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
                     <div class="contact-content">
-                        <h3>Nomor Telpon</h3>
-                        <h4>088705279826</h4>
+                        <h3>WhatsApp</h3>
+                        <h4>+6281325501836</h4>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Instagram</h3>
+                        <h4>oma.risol.banjarmasin</h4>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Tiktok</h3>
+                        <h4>@omarisolbanjarmasin</h4>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Facebook</h3>
+                        <h4>Oma Risol</h4>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Location</h3>
+                        <h4>Jl. Bumi Mas Raya No.46, Pemurus Baru, Kec. Banjarmasin Sel., Kota Banjarmasin, Kalimantan Selatan 70249</h4>
+                    </div>
+                    <div class="contact-map">
+
                     </div>
                 </div>
             </div>
@@ -113,7 +168,9 @@
             <div class="footer-icon"></div>
             <div class="footer-nav"></div>
         </div>
-        <div class="footer-copyright"></div>
+        <div class="footer-copyright">
+            <p>Copyright by Jana Senpai</p>
+        </div>
     </footer>
     <!-- End Footer -->
 
